@@ -37,3 +37,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 A Fintech Banck Application
 From [Youtube](https://www.youtube.com/watch?v=PuOVqP_cjkE&t=492s)
+Assets [google-docs] (https://drive.google.com/file/d/1TVhdnD97LajGsyaiNa6sDs-ap-z1oerA/view?usp=sharing)
+Dependencies [Shadcn/ui](https://ui.shadcn.com/docs/components/sheet)
