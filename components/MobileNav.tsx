@@ -3,13 +3,14 @@ import {
   Sheet,
   SheetClose,
   SheetContent,
-  SheetTrigger,
+  SheetTrigger
 } from "@/components/ui/sheet";
 import { sidebarLinks } from "@/constants";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Footer from "./Footer";
 
 const MobileNav = ({ user }: MobileNavProps) => {
   const pathname = usePathname();
@@ -54,7 +55,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
                         href={item.route}
                         key={item.label}
                         className={cn("mobilenav-sheet_close w-full", {
-                          "bg-bankGradient": isActive,
+                          "bg-bankGradient": isActive
                         })}
                       >
                         <Image
@@ -63,13 +64,13 @@ const MobileNav = ({ user }: MobileNavProps) => {
                           width={20}
                           height={20}
                           className={cn({
-                            "brightness-[3] invert-0": isActive,
+                            "brightness-[3] invert-0": isActive
                           })}
                         />
 
                         <p
                           className={cn("text-16 font-semibold text-black-2", {
-                            "text-white": isActive,
+                            "text-white": isActive
                           })}
                         >
                           {item.label}
@@ -81,7 +82,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
                 USER
               </nav>
             </SheetClose>
-            FOOTER
+            <Footer user={user} />
           </div>
         </SheetContent>
       </Sheet>

@@ -5,6 +5,7 @@ import React from "react";
 import { sidebarLinks } from "../constants/";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import Footer from "./Footer";
 
 const Sidebar = ({ user }: SiderbarProps) => {
   const pathname = usePathname();
@@ -37,7 +38,7 @@ const Sidebar = ({ user }: SiderbarProps) => {
                   alt={item.label}
                   fill
                   className={cn({
-                    "brightness-[3] invert-0": isActive,
+                    "brightness-[3] invert-0": isActive
                   })}
                 />
               </div>
@@ -49,7 +50,7 @@ const Sidebar = ({ user }: SiderbarProps) => {
         })}
         user
       </nav>
-      FOOTER
+      <Footer user={user} />
     </section>
   );
 };

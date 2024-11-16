@@ -50,11 +50,11 @@ const AuthForm = ({ type }: { type: string }) => {
         setUser(newUser);
       }
       if (type === "sign-in") {
-        // const response = await signIn({
-        //   email: data.email,
-        //   password: data.password
-        // });
-        // if (response) router.push("/");
+        const response = await signIn({
+          email: data.email,
+          password: data.password
+        });
+        if (response) router.push("/");
       }
     } catch (error) {
       console.log(error);
@@ -79,6 +79,7 @@ const AuthForm = ({ type }: { type: string }) => {
         <div className="flex flex-col gap-1 md:gap-3">
           <h1 className="text-24 lg:text-36 font-semibold text-gray-900">
             {user ? "Link Account" : type === "sign-in" ? "Sign In" : "Sign Up"}
+
             <p className="text-16 font-normal text-gray-600">
               {user
                 ? "Link your account to get started"
@@ -175,7 +176,7 @@ const AuthForm = ({ type }: { type: string }) => {
                   ) : type === "sign-in" ? (
                     "Sign In"
                   ) : (
-                    "Sign Out"
+                    "Sign Up"
                   )}
                 </Button>
               </div>
@@ -184,14 +185,14 @@ const AuthForm = ({ type }: { type: string }) => {
           <footer className="flex justify-center gap-1">
             <p className="text-14 font-normal text-gray-600">
               {type === "sign-in"
-                ? "Don't have an account yet"
-                : "Already have an account"}
+                ? "Don't have an account?"
+                : "Already have an account?"}
             </p>
             <Link
               href={type === "sign-in" ? "/sign-up" : "/sign-in"}
               className="form-link"
             >
-              {type === "sogn-in" ? "Sign up" : "Sign in"}
+              {type === "sign-in" ? "Sign up" : "Sign in"}
             </Link>
           </footer>
         </>
